@@ -1,10 +1,13 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
+import connectDb from './config/dbConnection';
 
 import BatteryRoutes from './routes/batteryRoutes';
 import { errorHandler } from './middleware/errorHandler';
 
 dotenv.config()
+
+connectDb();
 
 const port = process.env.PORT || 5000;
 
