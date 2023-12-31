@@ -75,7 +75,7 @@ export const getBatteries = async (req: Request, res: Response) => {
         });
     
         const averageWattCapacity =
-          batteries.length > 0 ? totalWattCapacity / batteries.length : 0;
+          batteries.length > 0 ? (totalWattCapacity / batteries.length).toFixed(2) : 0;
     
         res.status(HTTP_STATUS.OK).json({
           batteries: batteries,
