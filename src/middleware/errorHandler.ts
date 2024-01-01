@@ -15,7 +15,7 @@ export const errorHandler = (
             if (err instanceof CustomError) {
                 res.json({
                     title: "Validation Error",
-                    message: "One or more Entries don't have valid request",
+                    message: err.message,
                     details: err.details
                 });
             } else {
